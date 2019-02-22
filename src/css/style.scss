@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #D7DADD;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+._box-flex-def {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+    overflow: hidden;
+
+    &.scrollable {
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    &.align-center {
+        justify-content: center;
+    }
+    &.align-middle {
+        align-items: center;
+        justify-content: center;
+    }
+    &.space-between {
+        justify-content: space-between;
+    }
+    &.nowrap {
+        flex-wrap: nowrap;
+    }
+    &.auto-width {
+        width: auto !important;
+    }
+    &.auto-height {
+        height: auto !important;
+    }
+}
+
+.box-row {
+    @extend ._box-flex-def;
+
+    flex-direction: row;
+
+    &.align-left {
+        justify-content: flex-start;
+    }
+    &.align-right {
+        justify-content: flex-end;
+    }
+    &.vertical-align {
+        align-items: center;
+    }
+    &.baseline-align {
+        align-items: baseline;
+    }
+}
+
+.box-col {
+    @extend ._box-flex-def;
+
+    flex-direction: column;
+
+    &.align-top {
+        justify-content: flex-start;
+    }
+    &.align-bottom {
+        justify-content: flex-end;
+    }
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.no-overflow {
+    overflow: visible;
+}
+
+.nowrap-overflow {
+    line-height: 1.1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.move {
+    cursor: move;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.width-overflow {
+    flex: 1;
+    min-width: 0;
+}
+
+.flex-auto {
+    flex: 0 0 auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
