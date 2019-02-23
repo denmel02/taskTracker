@@ -25,7 +25,7 @@ export class LoginContainer extends PureComponent {
         />
     );
 
-    handleChange = (key, value) => this.setState(key, value);
+    handleChange = (key, value) => this.setState({[key]: value});
 
     handleCheckLoginDisable = () => !!this.state.errorKeys.email && !!this.state.errorKeys.password;
 

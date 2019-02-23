@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import {injectIntl, intlShape} from 'react-intl';
 import cx from 'classnames';
 import {Button} from '../../CommonComponents';
-import theme from './theme.scss'
+import theme from './theme.scss';
 
 const LoginButton = (props) => {
     const {intl: {formatMessage}, className, ...rest} = props;
 
     return (
-        <Button {...rest} className={cx(className, theme.button)} >
+        <Button {...rest} className={cx(className, theme.button)} raised primary>
             {formatMessage({id: 'login'})}
         </Button>
     );
