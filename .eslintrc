@@ -46,8 +46,6 @@
         "no-undefined": "error",
         "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
 
-        "callback-return": "error",
-
         "array-bracket-newline": ["error", {"multiline": true}],
         "array-element-newline": ["error", "consistent"],
         "brace-style": "error",

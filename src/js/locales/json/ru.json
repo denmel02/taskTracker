@@ -1,0 +1,19 @@
+{
+    "app_name": "Task Tracker",
+
+    "authorization": "Авторизация",
+
+    "login": "Войти",
+
+    "email": "E-mail",
+
+    "password": "Пароль",
+
+    "invalidEmail": "Введите корректный e-mail",
+
+    "invalidPassword": "Пароль должен состоять как минимум из 6 символов",
+
+    "suchUserIsNotRegistered": "Такой пользователь не зарегистрирован",
+
+    "wrongPassword": "Пароль не верный"
+}

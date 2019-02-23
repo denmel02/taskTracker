@@ -1,4 +1,4 @@
-import ru from './ru.json';
+import ru from './json/ru.json';
 
 export default {
     ru

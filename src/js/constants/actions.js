@@ -1,3 +1,25 @@
+export const CALL_API = 'CALL_API';
+
 export const LOGIN = 'LOGIN';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+export const LOGOUT = 'LOGOUT';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const LOGOUT_ERROR = 'LOGOUT_ERROR';
 
 export const FETCH_TASKS = 'FETCH_TASKS';
+export const FETCH_TASKS_SUCCESS = 'FETCH_TASKS_SUCCESS';
+export const FETCH_TASKS_ERROR = 'FETCH_TASKS_ERROR';
+
+export const CREATE_TASK = 'CREATE_TASK';
+export const CREATE_TASK_SUCCESS = 'CREATE_TASK_SUCCESS';
+export const CREATE_TASK_ERROR = 'CREATE_TASK_ERROR';
+
+export const UPDATE_TASK = 'UPDATE_TASK';
+export const UPDATE_TASK_SUCCESS = 'UPDATE_TASK_SUCCESS';
+export const UPDATE_TASK_ERROR = 'UPDATE_TASK_ERROR';
+
+export const REMOVE_TASK = 'REMOVE_TASK';
+export const REMOVE_TASK_SUCCESS = 'REMOVE_TASK_SUCCESS';
+export const REMOVE_TASK_ERROR = 'REMOVE_TASK_ERROR';
