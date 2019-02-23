@@ -10,23 +10,23 @@ const LoginComponent = (props) => {
     const disabled = !!errorKeys.email || !!errorKeys.password;
 
     return (
-        <div className={cx(theme.login)}>
-            <span className={cx(theme.title)}>{formatMessage({id: 'authorization'})}</span>
-            <LoginTextField
-                className={cx(theme.field)}
-                type="email"
-                value={email}
-                errorKey={errorKeys.email}
-                onChange={(value) => onChange('email', value)}
-            />
-            <LoginTextField
-                className={cx(theme.field)}
-                type="password"
-                value={password}
-                errorKey={errorKeys.password}
-                onChange={(value) => onChange('password', value)}
-            />
-            <LoginButton className={cx(theme.button)} disabled={disabled} onClick={onLogin} />
+        <div className={cx('box-row align-middle', theme.login)}>
+            <div className={cx('box-col align-center', theme.content)}>
+                <span className={cx(theme.title)}>{formatMessage({id: 'authorization'})}</span>
+                <LoginTextField
+                    type="email"
+                    value={email}
+                    errorKey={errorKeys.email}
+                    onChange={(value) => onChange('email', value)}
+                />
+                <LoginTextField
+                    type="password"
+                    value={password}
+                    errorKey={errorKeys.password}
+                    onChange={(value) => onChange('password', value)}
+                />
+                <LoginButton className={cx(theme.button)} disabled={disabled} onClick={onLogin} />
+            </div>
         </div>
     );
 };
