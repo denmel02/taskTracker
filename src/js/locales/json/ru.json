@@ -5,6 +5,8 @@
 
     "login": "Войти",
 
+    "logout": "Выйти",
+
     "email": "E-mail",
 
     "password": "Пароль",
@@ -15,5 +17,25 @@
 
     "suchUserIsNotRegistered": "Такой пользователь не зарегистрирован",
 
-    "wrongPassword": "Пароль не верный"
+    "wrongPassword": "Пароль не верный",
+
+    "withoutName": "Без названия",
+
+    "description": "Описание",
+
+    "plannedTime": "Запланированное время",
+
+    "spentTime": "Затраченное время",
+
+    "short": "Коротко",
+
+    "detail": "Подробно",
+
+    "scrum": "Scrum",
+
+    "new": "Новые",
+
+    "processed": "В работе",
+
+    "finished": "Завершены"
 }

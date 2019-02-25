@@ -1,9 +1,8 @@
 import {createSelector} from 'reselect';
 import locales from '../locales';
+import {deepCommonSelector} from './common';
 
-export const intlSelector = (state) => state.intl;
-
-export const intlContainerSelector = () => createSelector([intlSelector], (intl) => ({
-    locale: intl.locale,
-    messages: locales[intl.locale]
+export const intlContainerSelector = () => createSelector([deepCommonSelector('intl', 'locale')], (locale) => ({
+    locale,
+    messages: locales[locale]
 }));

@@ -1,0 +1,30 @@
+:local .header {
+    height: 50px;
+
+    .col {
+        border-bottom: 1px solid #c4c4c4;
+
+        &:not(:last-child){
+            border-right: 1px solid #c4c4c4;
+        }
+
+        &.new {
+            background-color: #e5e858
+        }
+
+        &.processed {
+            background-color: #ef5858;
+        }
+
+        &.finished {
+            background-color: #65ee56;
+        }
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+}
