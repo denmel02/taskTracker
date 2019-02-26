@@ -1,0 +1,35 @@
+:local .view {
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+
+    &.new {
+        background-color: #e5e858
+    }
+
+    &.processed {
+        background-color: #ef5858;
+    }
+
+    &.finished {
+        background-color: #65ee56;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+    .title {
+        display: -webkit-box;
+        max-height: 40px;
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+}

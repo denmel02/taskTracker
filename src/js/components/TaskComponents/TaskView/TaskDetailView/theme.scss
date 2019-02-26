@@ -1,0 +1,46 @@
+:local .view {
+    padding: 5px;
+    color: #515151;
+    font-size: 14px;
+    line-height: 14px;
+
+    &.new {
+        background-color: #e5e858
+    }
+
+    &.processed {
+        background-color: #ef5858;
+    }
+
+    &.finished {
+        background-color: #65ee56;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+        color: #000;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        display: -webkit-box;
+        max-height: 48px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        word-break: break-word;
+        word-wrap: break-word;
+        margin-bottom: 5px;
+    }
+
+    .time {
+        margin-right: 10px;
+    }
+}

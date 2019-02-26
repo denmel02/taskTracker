@@ -1,0 +1,9 @@
+:local .col {
+    &:not(:last-child){
+        border-right: 1px solid #c4c4c4;
+    }
+
+    .task {
+       margin: 0 5px 5px 0;
+    }
+}

@@ -1,4 +1,6 @@
-import {CALL_API, GET, POST, PATCH, DELETE, FETCH_TASKS, CREATE_TASK, UPDATE_TASK, REMOVE_TASK} from '../constants';
+import {
+    CALL_API, GET, POST, PATCH, DELETE, FETCH_TASKS, CREATE_TASK, UPDATE_TASK, REMOVE_TASK, CHANGE_KIND_OF_TABLE
+} from '../constants';
 import {getActionTypes} from '../utils';
 
 export const fetchTasks = () => ({
@@ -46,4 +48,9 @@ export const removeTask = (taskId) => ({
         },
         meta: {taskId}
     }
+});
+
+export const changeKindOfTable = (kindOfTable) => ({
+    type: CHANGE_KIND_OF_TABLE,
+    payload: kindOfTable
 });
