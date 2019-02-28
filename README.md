@@ -1,17 +1,20 @@
 # taskTracker
 
-used libs:
-    1. React
-    2. Redux
-    3. React-intl
-    4. React-toolbox
+### Used libs:
+    * React
+    * Redux
+    * React-intl
+    * React-toolbox
+    * React-router
+    * Connected-react-router
     
-for start project to do:
-    1. npm i
-    2. npm start
+### For start project to do:
+    * npm i
+    * npm start
     
-for test project used accaunt email: user@gmail.com password: q123456
+### For test project used accaunt email:
+    * user@gmail.com password: q123456
 
-to do next tasks:
-    1. Login form
-    2. Task table in short, detail and scrum view
+### To do next tasks:
+    * Login form
+    * Task table in short, detail and scrum view
