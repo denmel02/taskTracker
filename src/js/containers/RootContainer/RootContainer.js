@@ -1,13 +1,16 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import store from '../../store';
+import {ConnectedRouter} from 'connected-react-router';
+import {history, store} from '../../storeConfig';
 import IntlContainer from '../IntlContainer';
-import MainContainer from '../MainContainer';
+import RoutesContainer from '../RoutesContainer';
 
 const RootContainer = () => (
-    <Provider store={store} >
+    <Provider store={store}>
         <IntlContainer>
-            <MainContainer />
+            <ConnectedRouter history={history}>
+                <RoutesContainer />
+            </ConnectedRouter>
         </IntlContainer>
     </Provider>
 );

@@ -1,13 +1,15 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {push} from 'connected-react-router';
 import {login} from '../../actions';
 import {isFieldValid} from '../../utils';
 import LoginComponent from './LoginComponent';
 
 export class LoginContainer extends PureComponent {
     static propTypes = {
-        login: PropTypes.func.isRequired
+        login: PropTypes.func.isRequired,
+        push: PropTypes.func.isRequired
     };
 
     state = {
@@ -53,17 +55,21 @@ export class LoginContainer extends PureComponent {
             return;
         }
 
-        this.props.login(email, password).catch((errors) => {
-            if (!errors || errors.length === 0) {
-                return;
-            }
+        const {login, push} = this.props;
 
-            const errorKey = errors[0];
-            const fieldKey = errorKey === 'suchUserIsNotRegistered' ? 'email' : 'password';
+        login(email, password)
+            .then(() => push('/tasks'))
+            .catch((errors) => {
+                if (!errors || errors.length === 0) {
+                    return;
+                }
 
-            this.setState((prevState) => ({errorKeys: {...prevState.errorKeys, [fieldKey]: errorKey}}));
-        });
+                const errorKey = errors[0];
+                const fieldKey = errorKey === 'suchUserIsNotRegistered' ? 'email' : 'password';
+
+                this.setState((prevState) => ({errorKeys: {...prevState.errorKeys, [fieldKey]: errorKey}}));
+            });
     };
 }
 
-export default connect(null, {login})(LoginContainer);
+export default connect(null, {login, push})(LoginContainer);
