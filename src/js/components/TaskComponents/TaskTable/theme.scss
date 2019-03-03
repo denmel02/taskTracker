@@ -1,7 +1,11 @@
-:local   .task {
-    margin-bottom: 5px;
+:local   .content{
+    align-content: flex-start;
 
-    &.short {
-        margin-left: 5px;
+    .task {
+        margin-bottom: 5px;
+
+        &.short {
+            margin-left: 5px;
+        }
     }
 }

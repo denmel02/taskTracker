@@ -1,0 +1,9 @@
+:local .table{
+    flex: 1 1 0;
+
+    .col {
+        &:not(:last-child){
+            border-right: 1px solid #c4c4c4;
+        }
+    }
+}

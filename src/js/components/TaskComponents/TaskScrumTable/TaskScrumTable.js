@@ -1,16 +1,29 @@
 import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import TaskTableScrumContent from './TaskTableScrumContent';
-import TaskTableScrumHeader from './TaskTableScrumHeader';
+import {TASK_STATUSES} from '../../../constants';
+import {DropComponent} from '../../CommonComponents';
+import TaskScrumCol from './TaskScrumCol';
+import theme from './theme.scss';
+
+const DropTaskScrumCol = DropComponent(TaskScrumCol);
 
 const TaskScrumTable = (props) => {
-    const {onDrop, ...rest} = props;
+    const {tasks, onClick, onDrop} = props;
 
     return (
-        <div className={cx('box-col nowrap width-overflow')}>
-            <TaskTableScrumHeader onDrop={onDrop} />
-            <TaskTableScrumContent {...rest} onDrop={onDrop} />
+        <div className={cx('box-row nowrap', theme.table)}>
+            {TASK_STATUSES.map((status) => (
+                <DropTaskScrumCol
+                    key={status}
+                    className={cx(theme.col)}
+                    status={status}
+                    tasks={tasks[status] || []}
+                    onClick={onClick}
+                    canDrop
+                    onDrop={(item) => onDrop(status, item)}
+                />
+            ))}
         </div>
     );
 };
@@ -22,8 +35,7 @@ TaskScrumTable.propTypes = {
         finished: PropTypes.arrayOf(PropTypes.object)
     }).isRequired,
     onClick: PropTypes.func.isRequired,
-    onDrop: PropTypes.func.isRequired,
-    onDragStart: PropTypes.func.isRequired
+    onDrop: PropTypes.func.isRequired
 };
 
 export default memo(TaskScrumTable);
