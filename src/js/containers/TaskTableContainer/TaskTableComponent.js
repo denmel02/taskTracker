@@ -28,7 +28,6 @@ TaskTableComponent.propTypes = {
     ]).isRequired,
     kindOfTable: PropTypes.oneOf(KINDS_OF_TABLE).isRequired,
     onClick: PropTypes.func.isRequired,
-    onDragStart: PropTypes.func.isRequired,
     onDrop: PropTypes.func.isRequired
 };
 

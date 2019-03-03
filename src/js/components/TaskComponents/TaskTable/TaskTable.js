@@ -8,7 +8,7 @@ const TaskTable = (props) => {
     const {tasks, isShortView, onClick} = props;
 
     return (
-        <div className={cx('width-overflow', isShortView ? 'box-row' : 'box-col')}>
+        <div className={cx('width-overflow', isShortView ? 'box-row' : 'box-col', theme.content)}>
             {tasks.map((task) => (
                 <TaskView
                     key={task.id}

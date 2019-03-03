@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
 import {login} from '../../actions';
+import {loginContainerSelector} from '../../selectors';
 import {isFieldValid} from '../../utils';
 import LoginComponent from './LoginComponent';
 
 export class LoginContainer extends PureComponent {
     static propTypes = {
+        isLoginSuccess: PropTypes.bool.isRequired,
         login: PropTypes.func.isRequired,
         push: PropTypes.func.isRequired
     };
@@ -20,6 +22,14 @@ export class LoginContainer extends PureComponent {
             password: ''
         }
     };
+
+    componentDidMount = () => {
+        const {isLoginSuccess, push} = this.props;
+
+        if (isLoginSuccess) {
+            push('/tasks');
+        }
+    }
 
     render = () => (
         <LoginComponent
@@ -72,4 +82,4 @@ export class LoginContainer extends PureComponent {
     };
 }
 
-export default connect(null, {login, push})(LoginContainer);
+export default connect(loginContainerSelector(), {login, push})(LoginContainer);

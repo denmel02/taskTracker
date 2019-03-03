@@ -1,0 +1,1 @@
+export const DND_COMPONENT = 'DND_COMPONENT';

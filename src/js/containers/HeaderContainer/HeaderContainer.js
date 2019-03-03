@@ -8,7 +8,7 @@ import {changeKindOfTable, logout} from '../../actions';
 import HeaderComponent from './HeaderComponent';
 
 export class HeaderContainer extends PureComponent {
-    propTypes = {
+    static propTypes = {
         kindOfTable: PropTypes.oneOf(KINDS_OF_TABLE).isRequired,
         changeKindOfTable: PropTypes.func.isRequired,
         logout: PropTypes.func.isRequired,

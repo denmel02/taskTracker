@@ -7,7 +7,7 @@ import {taskTableContainerSelector} from '../../selectors';
 import TaskTableComponent from './TaskTableComponent';
 
 export class TaskTableContainer extends PureComponent {
-    propTypes = {
+    static propTypes = {
         tasks: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.object),
             PropTypes.shape({
@@ -33,7 +33,6 @@ export class TaskTableContainer extends PureComponent {
                 tasks={tasks}
                 kindOfTable={kindOfTable}
                 onClick={this.handleClick}
-                onDragStart={this.handleDragStart}
                 onDrop={this.handleDrop}
             />
         );
@@ -41,10 +40,12 @@ export class TaskTableContainer extends PureComponent {
 
     handleClick = (taskId) => alert(`push to /tasks/${taskId}`);
 
-    handleDragStart = (event, taskId) => event.dataTransfer.setData('taskId', taskId);
+    handleDrop = (status, {dragProps = {}}) => {
+        const {taskId, status: oldStatus} = dragProps;
 
-    handleDrop = (event, status) => {
-        const taskId = event.dataTransfer.getData('taskId');
+        if (!oldStatus || oldStatus === status) {
+            return;
+        }
 
         if (taskId) {
             this.props.updateTask(taskId, {status});

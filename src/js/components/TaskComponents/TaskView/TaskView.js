@@ -1,14 +1,15 @@
 import React, {memo} from 'react';
 import PropTypes from 'prop-types';
+import {TASK_STATUSES} from '../../../constants';
 import TaskShortView from './TaskShortView';
 import TaskDetailView from './TaskDetailView';
 
 const TaskView = (props) => {
-    const {isShortView, draggable, onDragStart, ...rest} = props;
+    const {isShortView, ...rest} = props;
 
     if (isShortView) {
         return (
-            <TaskShortView {...rest} draggable={draggable} onDragStart={onDragStart} />
+            <TaskShortView {...rest} />
         );
     }
 
@@ -22,20 +23,18 @@ TaskView.propTypes = {
     task: PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
-        status: PropTypes.oneOf(['new', 'processed', 'finished']),
+        status: PropTypes.oneOf(TASK_STATUSES),
         plannedTime: PropTypes.number,
         spentTime: PropTypes.number
     }).isRequired,
     isShortView: PropTypes.bool.isRequired,
-    draggable: PropTypes.bool,
     onClick: PropTypes.func.isRequired,
-    onDragStart: PropTypes.func
+    componentRef: PropTypes.shape({current: PropTypes.instanceOf(Element)})
 };
 
 TaskView.defaultProps = {
     className: '',
-    draggable: false,
-    onDragStart: null
+    componentRef: null
 };
 
 export default memo(TaskView);
